@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paardensprong - The Knight's Word Puzzle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Function to load the selected language from localStorage or set default to English
+        function loadLanguage() {
+            const savedLanguage = localStorage.getItem('selectedLanguage') || 'english';
+            document.getElementById("languageSelector").value = savedLanguage;
+        }
+
+        // Function to save the selected language in localStorage
+        function saveLanguage() {
+            const selectedLanguage = document.getElementById("languageSelector").value;
+            localStorage.setItem('selectedLanguage', selectedLanguage);
+        }
+
+        // Ensure language is set when the page loads
+        window.onload = loadLanguage;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Paardensprong</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+        </nav>
+        <select id="languageSelector" onchange="saveLanguage()">
+            <option value="english">English</option>
+            <option value="dutch">Dutch</option>
+        </select>
+    </header>
+
+    <main>
+        <h2>Welcome to Paardensprong!</h2>
+        <p>In Paardensprong, your goal is to guess a hidden word. The word is spelled out letter by letter on a 3x3 grid, but there’s a twist – the letters are arranged based on the knight's move in chess (L-shaped jumps). You can only move from one letter to another by following the knight’s movement rules. Can you figure out the word before revealing it?</p>
+        <a href="game.html" class="start-button">Start Game</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Paardensprong. All rights reserved.</p>
+    </footer>
+</body>
+</html>

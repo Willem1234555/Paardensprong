@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paardensprong - The Knight's Word Puzzle</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    // Function to load the selected language from localStorage or set default to English
+    function loadLanguage() {
+        const savedLanguage = localStorage.getItem('selectedLanguage') || 'english';
+        document.getElementById("languageSelector").value = savedLanguage;
+        // No need to call loadWords() here; it will be called in window.onload in game.js
+    }
+
+    // Function to save the selected language in localStorage and update words
+    function saveLanguage() {
+        const selectedLanguage = document.getElementById("languageSelector").value;
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+        loadWords(); // Load words for the selected language
+    }
+
+    // Ensure language is set when the page loads
+    window.onload = loadLanguage;
+</script>
+</head>
+<body>
+    <header>
+        <h1>Paardensprong - The Knight's Move Puzzle</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="game.html">Play</a>
+        </nav>
+        <select id="languageSelector" onchange="saveLanguage()">
+        <option value="english">English</option>
+        <option value="dutch">Dutch</option>
+    </select>
+    </header>
+
+    <main>
+        <section class="game-board">
+            <table>
+                <tr>
+                    <td id="cell-1"></td>
+                    <td id="cell-2"></td>
+                    <td id="cell-3"></td>
+                </tr>
+                <tr>
+                    <td id="cell-4"></td>
+                    <td id="cell-5" class="empty"></td> <!-- Center empty -->
+                    <td id="cell-6"></td>
+                </tr>
+                <tr>
+                    <td id="cell-7"></td>
+                    <td id="cell-8"></td>
+                    <td id="cell-9"></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="game-controls">
+            <input type="text" id="guess-input" placeholder="Enter your guess">
+            <div class="button-container">
+                <button onclick="submitGuess()">Submit Guess</button>
+                <button onclick="revealWord()">Reveal Word</button>
+                <button onclick="resetBoard()">Reset Board</button>
+            </div>
+        </section>
+
+        <section class="game-status">
+            <p id="game-status-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Paardensprong. All rights reserved.</p>
+    </footer>
+
+    <script src="js/game.js"></script>
+    <script>
+        // Initialize the game after all scripts have loaded
+        window.onload = function() {
+            loadLanguage(); // Set the language selector's value
+            loadWords();    // Load words based on the selected language
+        }
+    </script>
+</body>
+</html>

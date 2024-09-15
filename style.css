@@ -1,0 +1,178 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Reduced top whitespace */
+    height: 100vh;
+}
+
+/* Header Styling */
+header {
+    align-items: center; /* Vertically aligns content */
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;  /* Spacing between header and game area */
+}
+
+header nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+
+h1 {
+    margin: 0;
+}
+
+/* Language Selector */
+#language-container {
+    display: flex;
+    margin-left: 20px; /* Adds space between the nav and the language selector */
+}
+
+#language-select {
+    font-size: 1em; /* Make the select box 1.5 times larger */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/* Main Game Area */
+main {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align everything in the center */
+}
+
+/* Start Game Button Styling */
+.start-button {
+    background-color: #007aff;  /* Apple-like blue color */
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;  /* Remove underline for links */
+    border-radius: 10px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #005fcb;  /* Slightly darker blue on hover */
+}
+
+/* Game Board Styles */
+.game-board {
+    margin: 20px auto;
+    width: 400px;  /* Double the width for a larger grid */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    width: 100px;   /* Increased width for larger grid */
+    height: 100px;  /* Increased height for larger grid */
+    border: 1px solid #333;
+    text-align: center;
+    font-size: 36px;  /* Larger font for letters */
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #f0f0f5;
+}
+
+/* Empty cell styling */
+.empty {
+    background-color: #f4f4f9;
+}
+
+/* Guess Input Box Styling */
+.game-controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the input box */
+}
+
+.game-controls input {
+    width: 300px; /* Larger input box */
+    height: 50px; /* Taller input box */
+    padding: 10px;
+    font-size: 24px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;  /* Add space between input box and buttons */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.game-controls input:focus {
+    border-color: #007aff; /* Apple-like blue focus color */
+}
+
+/* Buttons horizontally aligned */
+.game-controls .button-container {
+    display: flex;
+    justify-content: center;  /* Center the buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
+.game-controls button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-controls button:hover {
+    background-color: #f0f0f5;
+}
+
+/* Specific Button Colors */
+button:nth-of-type(1) {
+    background-color: #28a745;
+    color: white;
+}
+
+button:nth-of-type(2) {
+    background-color: #007aff; /* Apple-like blue button */
+    color: white;
+}
+
+button:nth-of-type(3) {
+    background-color: #ff3b30; /* Apple-like red button */
+    color: white;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
